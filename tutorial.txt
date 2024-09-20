@@ -104,6 +104,9 @@ Nas linguagem de programação as variáveis são tipadas ou dinâmicamente tipa
 Existem 3 tipos de variáveis :
 String -> Armazena caracteres e números inteiros e não inteiros
 Boolean -> true | false
+
+ATENÇÃO :No JS uma variável pode ser criada usando let ou var
+var (obsoleto e inseguro), usar sempre o let
 __________________________________________________________________
 Comandos JavaScript
 console.log() -> escrever no console

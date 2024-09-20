@@ -4,19 +4,28 @@
  */
 
 console.clear()
- //variáveis
- let nome 
- let idade
- let vip
+// constante
+const pi =3.14
 
- nome = "Alex Lima"
- console.log(typeof(nome))
- console.log(nome)
+// variáveis
+let nome 
+let idade
+let vip
 
- idade = "20"
- console.log(typeof(idade))
- console.log(idade)
+nome = "Alex Lima"
+console.log(typeof(nome))
+console.log(nome)
 
- vip = true
- console.log(typeof(vip))
- console.log(vip)
+idade = "20"
+console.log(typeof(idade))
+console.log(idade)
+
+vip = true
+console.log(typeof(vip))
+console.log(vip)
+
+console.log(pi)
+//pi =3.17
+
+nome = "Alex Lima"
+console.log(nome)
