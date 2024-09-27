@@ -28,6 +28,21 @@ Lógica de programação
 - POO
 - estruturas de dados
 
+__________________________________________________________________
+
+MANDAMENTOS DA PROGRAMAÇÃO
+1) UX (User eXperience) - desenvolver sempre pensando na experiência do usuário.
+
+Dica de vídeo: https://youtu.be/Z1GNW_woXIO?si=rt8A-7amLsIxuoKW
+
+2) usar o mínimo possível de código (variáveis, operadores compradores estruturas de controle etc) para resolver o problema (lembrar do marca-passo)
+
+3) Entender o Problema: Não adianta sentar na frente PC se você não sabe resolver o problema.
+Algorítmo ("receita de bolo")
+Conceito: 
+            variáveis 
+entrada - processamento - saída
+
 GIT e GITHUB
 
 Comandos básicos do git:
@@ -81,7 +96,9 @@ npm ls (lista pacotes instalados)
  
 npm init (iniciar um novo projeto JavaScript)
      ____package.json
- 
+ npm ls (listar pacotes instalados)
+ npm i nome_do_pacote (instalar um novo pacote)
+ npm i nome_do_pacote (remover pacote)
 json(JavaScript object notation)
 __________________________________________________________________
 
