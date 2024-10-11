@@ -131,3 +131,26 @@ console.clear() -> Limpar a tela do console
 const -> criar(delcarar) uma constante
 let -> criar(declarar) uma Variável
 typeof() varificar o tipo de variável
+
+
+
+__________________________________________________________________
+Estrutura    de controle 
+- condicionais
+- laços de repetições
+
+Estruturas de controle condicionais 
+
+if (condição) {
+    //condição verdadeira
+}
+
+if (condição) {
+    //condição verdadeira
+} else {
+    //condição falsa
+}
+
+Observações:
+1) Uma condição nunca pode ser verdadeira e falsa simultaneamente.
+2) No uso do if-else sempre uma das condições será processada.
