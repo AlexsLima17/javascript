@@ -31,4 +31,19 @@ console.log(`Peso: ${peso}`)
 console.log(`Altura: ${altura}`)
 console.log(`Vip: ${vip}`)
 console.log(`FCM: ${fcm}`)
-console.log(`imc: ${imc}`)
+console.log(`imc: ${imc.toFixed(2)}`)
+
+// tabela IMC
+if (imc < 18.5) {
+    console.log("Abaixo do peso")
+} else if (imc < 25){
+    console.log("Peso Normal")
+} else if (imc < 30){
+    console.log("Levemente Acima do Peso")
+} else if (imc < 35){
+    console.log("Obesidade Grau 1 ")
+}else if (imc < 40){
+    console.log("Obesidade Grau 2 (severa) ")
+}else (imc > 40){
+    console.log("Obesidade Grau 3 (mórbida) ")
+}
