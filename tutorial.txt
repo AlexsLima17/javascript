@@ -176,3 +176,19 @@ switch (variável) {
     default: 
         // opcional, o código será executado se nenhum caso for definido break
 }
+
+Estrutura de controle - Laços de repetições 
+
+for (let i = 1; i < 10; i++) {
+
+}
+
+// Laço com número de repetições definidas
+// let i = 1 (início)
+// i < 10 (condição)
+// i++ (incremento) i-- (decremento)
+
+Uso do laço for 
+1) Percorrer uma estrutura de dados (importante)
+2) Simplificar o código 
+3) Fazer cálculos levando em conta a variável interna do laço
