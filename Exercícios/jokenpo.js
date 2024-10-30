@@ -6,6 +6,9 @@
 //biblioteca
 const input = require('readline-sync')
 
+let opcao
+
+do{
 console.clear()
 console.log("___JoKenPo___")
 console.log("1. Pedra")
@@ -58,3 +61,7 @@ if (jogador === computador){
 } else {
     console.log("COMPUTADOR VENCEU ")
 }
+
+opcao = input.question("Deseja jogar novamente (s/n) ")
+
+}while (opcao === 's');
