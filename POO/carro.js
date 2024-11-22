@@ -7,9 +7,9 @@ console.clear();
 // Criando a classe modelo
 class Carro {
     // Atributos
-    constructor(marca, modelo, ano, ligado = false) {
-        this.marca = marca;
+    constructor(modelo, cor, ano, ligado = false) {
         this.modelo = modelo;
+        this.cor = cor;
         this.ano = ano;
         this.ligado = ligado;
         
@@ -19,8 +19,8 @@ class Carro {
     criarCarro() {
         console.log("-------------------------------------------");
         console.log("🚗 Carro criado!");
-        console.log(`Marca: ${this.marca}`);
         console.log(`Modelo: ${this.modelo}`);
+        console.log(`Cor: ${this.cor}`);
         console.log(`Ano: ${this.ano}`);
     }
 
@@ -52,7 +52,7 @@ class Carro {
 }
 
 /****** Testando a classe ******/
-const carro1 = new Carro("Ford", "Mustang", "1969");
+const carro1 = new Carro("Mustang", "Verde", "1969");
 carro1.criarCarro();
 carro1.ligar();
 carro1.acelerar();
@@ -60,7 +60,7 @@ carro1.desligar();
 
 console.log("");
 
-const carro2 = new Carro("Toyota", "Supra", "1994");
+const carro2 = new Carro("Supra", "Branco", "1994");
 carro2.criarCarro();
 carro2.acelerar(); 
 carro2.ligar();
