@@ -221,9 +221,16 @@ Pilares da programação orientada e objetos
 // Reutilização
 Abstração
 Herança
+Polimorfismo
+
+Classe modelo (abstração - herança - poliformismo)
+- Biblioteca nativa do JS
+- Biblioteca instalada do node
+- Criada pelo usuário usando classe
+
+Observação o ponto "." é usado para acessar atributos e métodos de classe modelo
 
 // Segurança
-polimorfismo
 encapsulamento
 
 Observações:
@@ -237,3 +244,12 @@ Língua Portuguesa:
 Objeto (substantivo)
 Atributo (adjetivo)
 Métodos (verbos)
+__________________________________________________________________
+Estruturas de dados (array, vetor ou lista)
+É uma forma especial de trabalhar com variáveis, podendo armazenar mais de um valor em uma única variavel.
+Para manipular os dados de um vetor uasmos o índice que sempre iicia em 0 (zero)
+
+Usos do veor:
+1) Simplificar oe minimizar o código 
+2) Problemas que precisam armazenar dados em uma sequência 
+3) Estrutura de dados em operações como banco de dados
