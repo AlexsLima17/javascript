@@ -1,33 +1,32 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-.container{
-    max-width: 1000px;
-    margin: 0;
+.Container {
+    max-width: 1080px;
+    margin: 0 auto;
 }
 
-.container img{
+img {
     max-width: 100%;
 }
-/* Classes que serão manipuladas pelo JS
-easy-in-out (efeitode transição suave)
-.slideEsq e .slideDir(classes que serão adicionadas ao HTML pelo JS)
-Transition transform (efeitos de animação do CSS(rolagem na horizontal e fade)) */
 
-#slide {
-    transition: transform 1s easy-in-out, opacity 1s ease-in-out
+/* Efeito deslizar (transform) com fade (opacity) */
+
+/* Configuração inicial do slide */
+#slide {      
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
 }
 
-/*Saída*/
-#slide.slideEsq {
-    transform: translateX(-100%);
-    opacity: 0; /*totalmente transparente */
+/* slide de entrada */
+#slide.slideIn {
+    transform: translateX(-100%); /* 0  translateY */
+    opacity: 0;
 }
 
-/* entrada */
-#slide.slideDir{
-    transform: translateX(0);
-    opacity: 1;/*solido*/
+/* slide de saída */
+#slide.slideOut {
+    transform: translateX(0); /* translateY */
+    opacity: 1;
 }

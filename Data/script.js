@@ -11,8 +11,13 @@ function obterData() {
         month: 'long',
         day: 'numeric',
     }
-    return data.toLocaleDateString('pt-BR', options)
+    return `${data.toLocaleDateString('pt-BR', options)} - ${data.toLocaleDateString('pt-BR',)}`
 }
 
-//a linha abaixo insere na tag <p> identificada como dataAtual o retorno da função
-document.getElementById('dataAtual').innerHTML = obterData()
+function atualizarData() {
+    //a linha abaixo insere na tag <p> identificada como dataAtual o retorno da função
+    document.getElementById('dataAtual').innerHTML = obterData()
+}
+
+//Atualizar a data/hora a cada segundo
+setInterval(atualizarData, 1000) //1000ms = 1s
