@@ -22,4 +22,4 @@ function slider() {
     main.styles.transition = "background-image 1s ease-in-out"
 }
 
-setInterval(slider, 3000)
+setInterval(slider, 3000) 
