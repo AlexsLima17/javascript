@@ -1,71 +1,61 @@
-function buscarEndereco() {
-    let cep = document.getElementById('cep').value
-    let urlAPI = `https://viacep.com.br/ws/${cep}/json/`
+$(document).ready(function () {
+    // Máscaras
+    $('#cpf').mask('000.000.000-00');
+    $('#data_nascimento').mask('00/00/0000');
+    $('#telefone').mask('(00)00000-0000');
 
-    fetch(urlAPI)
-        .then(response => response.json())
-        .then(dados => {
-            document.getElementById('logradouro').value = dados.logradouro
-            document.getElementById('bairro').value = dados.bairro
-            document.getElementById('cidade').value = dados.localidade
-            document.getElementById('uf').value = dados.uf;
-        })
-        .catch(error => console.error('Erro ao buscar o endereço:', error));
-}
-
-function validarEmail(email) {
-    // Regex atualizado para validar corretamente domínios com .com e outras extensões
-    let regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    return regexEmail.test(email);
-}
-
-// Exibir erro ao lado do campo de e-mail em tempo real
-document.getElementById("email").addEventListener("input", function () {
-    let email = this.value.trim();
-    let emailErro = document.getElementById("email-erro");
-
-    if (!validarEmail(email)) {
-        emailErro.textContent = "⚠️ E-mail inválido! Exemplo: usuario@email.com";
-        emailErro.style.color = "red";
-    } else {
-        emailErro.textContent = "";
-    }
+    // Busca automática de endereço via CEP (se necessário)
+    $('#cep').blur(function () {
+        let cep = $(this).val().replace(/\D/g, '');
+        if (cep.length === 8) {
+            $.getJSON(`https://viacep.com.br/ws/${cep}/json/`, function (data) {
+                if (!("erro" in data)) {
+                    $("#logradouro").val(data.logradouro);
+                    $("#bairro").val(data.bairro);
+                    $("#cidade").val(data.localidade);
+                    $("#estado").val(data.uf);
+                } else {
+                    alert("CEP não encontrado!");
+                }
+            });
+        }
+    });
 });
 
-function validarFormulario() {
-    let nome = document.getElementById("nome").value.trim();
-    let email = document.getElementById("email").value.trim();
-    let telefone = document.getElementById("telefone").value.trim();
-    let cep = document.getElementById("cep").value.trim();
-    let logradouro = document.getElementById("logradouro").value.trim();
-    let bairro = document.getElementById("bairro").value.trim();
-    let cidade = document.getElementById("cidade").value.trim();
-    let uf = document.getElementById("uf").value.trim();
+    // Aplica a máscara (000.000.000-00)
+    if (cpf.length > 3) cpf = cpf.replace(/^(\d{3})(\d)/, '$1.$2');
+    if (cpf.length > 6) cpf = cpf.replace(/^(\d{3})\.(\d{3})(\d)/, '$1.$2.$3');
+    if (cpf.length > 9) cpf = cpf.replace(/^(\d{3})\.(\d{3})\.(\d{3})(\d)/, '$1.$2.$3-$4');
 
-    let mensagemErro = "";
+    this.value = cpf; // Atualiza o input formatado
 
-    if (!nome || !email || !telefone || !cep || !logradouro || !bairro || !cidade || !uf) {
-        mensagemErro += "⚠️ Preencha todos os campos obrigatórios!<br>";
+    function validarCPF() {
+        let cpf = document.getElementById("cpf").value.replace(/\D/g, '');
+        let cpfErro = document.getElementById("cpfErro");
+    
+        if (cpf.length !== 11 || /^(\d)\1{10}$/.test(cpf)) {
+            cpfErro.style.display = "block";
+            return false;
+        }
+        
+        let soma = 0, resto;
+        for (let i = 1; i <= 9; i++) soma += parseInt(cpf.charAt(i - 1)) * (11 - i);
+        resto = (soma * 10) % 11;
+        if (resto === 10 || resto === 11) resto = 0;
+        if (resto !== parseInt(cpf.charAt(9))) {
+            cpfErro.style.display = "block";
+            return false;
+        }
+        
+        soma = 0;
+        for (let i = 1; i <= 10; i++) soma += parseInt(cpf.charAt(i - 1)) * (12 - i);
+        resto = (soma * 10) % 11;
+        if (resto === 10 || resto === 11) resto = 0;
+        if (resto !== parseInt(cpf.charAt(10))) {
+            cpfErro.style.display = "block";
+            return false;
+        }
+        
+        cpfErro.style.display = "none";
+        return true;
     }
-
-    if (!validarEmail(email)) {
-        mensagemErro += "⚠️ E-mail inválido! Verifique se está correto.<br>";
-    }
-
-    if (mensagemErro) {
-        document.getElementById("error-message").innerHTML = mensagemErro;
-        document.getElementById("error-message").style.display = "block";
-        return false;
-    }
-
-    return true;
-}
-
-document.getElementById("form-cadastro").addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    if (validarFormulario()) {
-        alert("Cadastro realizado com sucesso! 🎉");
-        this.submit();
-    }
-});

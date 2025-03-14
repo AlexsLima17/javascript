@@ -1,59 +1,63 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-    text-align: center;
-    padding: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+}
+
+h3 {
+    color: #333;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
 }
 
 form {
     background: #fff;
-    max-width: 400px;
-    margin: auto;
-    padding: 20px;
     border-radius: 10px;
+    padding: 30px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    text-align: left;
-}
-
-h2, h3 {
-    text-align: center;
-    color: #333;
 }
 
 label {
     font-weight: bold;
-    display: block;
-    margin-top: 10px;
 }
 
-input {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
+input, select {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
+    padding: 8px;
 }
 
 button {
-    width: 100%;
     padding: 10px;
-    background: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
     font-size: 18px;
-    margin-top: 15px;
     cursor: pointer;
 }
 
 button:hover {
-    background: #218838;
+    background-color: #0056b3;
 }
 
-#error-message {
-    color: red;
-    text-align: center;
+/* Responsivo */
+@media (max-width: 768px) {
+    .container {
+        max-width: 100%;
+    }
+}
+
+#mensagem {
     margin-top: 10px;
+    font-size: 18px;
     font-weight: bold;
+}
+.valido {
+    color: green;
+}
+.invalido {
+    color: red;
 }
