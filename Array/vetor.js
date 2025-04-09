@@ -2,27 +2,89 @@
  * Estruturas de Dados
  * @author Alex Lima
  */
-
-//                  [0]     [1]     [2]     [3]     [4]
-let alunosEM1 = ["Tania","Pedro","Maria","João","Viviane"]
+//                  [0]      [1]      [2]      [3]      [4]
+let alunosEM1 = ["Tania", "Pedro", "Maria", "Joao", "Viviane"]
 
 console.clear()
+
 console.log(typeof(alunosEM1))
+
+// O comando abaixo exibe os elementos do vetor
 console.log(alunosEM1)
-// o comando abaixo identifica o número de elementos de um vetor
+
+// O comando abaixo identifica o número de elementos de um vetor
 console.log(alunosEM1.length)
-// o comando abaxio exibe o índice do array associado ao elemento
+
+// O comando abaixo exibe o índice do array associado ao elemento
 console.table(alunosEM1)
+
+// O comando abaixo exibe o elemento do índice selecionado
 console.log(alunosEM1[2])
-//comando abaixo adiciona um elemento ao vetor
+
+// O comando abaixo adiciona um elemento ao vetor
 alunosEM1.push("Jorge")
-console.log(alunosEM1)
-//para alterar um elmento do vetor, é necessário usar o íncide
-alunosEM1[3] = "João Pantera"
+
+// O comando abaixo exibe os elementos do vetor
 console.table(alunosEM1)
-// o comando abaixo remove o último elemento do vetor
+
+// Para alterar um elemento do vetor, é necessário usar o índice
+alunosEM1[3] = "Joaozinho"
+
+// O comando abaixo exibe os elementos do vetor
+console.table(alunosEM1)
+
+// O comando abaixo remove o último elemento do vetor
 alunosEM1.pop()
+
+// O comando abaixo exibe os elementos do vetor
 console.table(alunosEM1)
-//removendo um elemento específico sem alterar o índice, neste caso é necessário fronecer o índice do elemento a ser excluído
+
+// Removendo um elemento específico sem alterar o índice, neste caso é necessário fornecer o índice a ser excluído
 delete alunosEM1[1]
+
+// O comando abaixo exibe os elementos do vetor
 console.table(alunosEM1)
+
+// percorrente um vetor
+let notas = [3, 8, 5, 9, 2]
+console.log(notas)
+console.table(notas)
+
+//laço for
+for (let i = 0; i < notas.length; i++){
+    console.log(notas[i])
+}
+
+//laço forEach (simplificação do for exclusiva para percorrero o vetor)
+notas.forEach((n) => {
+    console.log(n)
+})
+
+// mapeamento map() (forEach + alteração do vetor)
+//Exemplo 1: Adicionar 1 ponto a cada nota
+let notasAtualizadas = notas.map((na) => {
+    return (na + 1)
+})
+console.log(notas)
+console.log(notasAtualizadas)
+
+// Exemplo 2: Conversão de sistemas de pontos para letras
+/** 
+ SENAC: 
+ NA: Não atendeu (nota < 5)
+ PA: Parcialmente atendido (nota entre 5 e 7)
+ A: Atendeu (nota > 7)
+*/
+
+let notasConvertidas = notas.map((nc) => {
+    if (nc < 5) {
+        return("NA")
+    } else if (nc > 7) {
+        return("A")
+    } else {
+        return("PA")
+    }
+})
+
+console.log(notas)
+console.log(notasAtualizadas)
